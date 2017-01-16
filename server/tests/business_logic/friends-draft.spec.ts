@@ -1,10 +1,12 @@
+/// <reference path="../../node_modules/@types/jasmine/index.d.ts" />
+import FriendsDraft from '../../src/business_logic/friends-draft';
 
-describe('friends draft runner', () => {
-    //var friendsDraft = new FriendsDraftRunner();
-    
+describe('friends draft', () => {
+    let friendsDraft = new FriendsDraft();
     it('should not accept duplicate ids', () => {
-        expect(true).toBe(false);
-            
+        let ids: number[] = [1, 1, 2, 3];
+
+        expect(function () { friendsDraft.runDraft(ids); }).toThrowError('Duplicate items was provided');
     });
 
     it('should not accept less than three items when run', () => {
@@ -22,6 +24,5 @@ describe('friends draft runner', () => {
     it('should return bi-dimensional array with all array positions fullfiled by two friends (friend 1 got friend 2)', () => {
         expect(true).toBe(false);
     });
-        
+
 });
-    

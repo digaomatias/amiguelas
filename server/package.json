@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "jasmine",
+    "build": "tsc",
+    "clean": "rimraf ./dist && mkdir dist",
+    "prebuild": "npm run clean"
   },
   "author": "Rodrigo Leote",
   "license": "ISC",
@@ -12,6 +15,10 @@
     "express": "^4.14.0"
   },
   "devDependencies": {
-    "jasmine": "^2.5.3"
+    "@types/jasmine": "^2.5.40",
+    "@types/node": "^7.0.0",
+    "jasmine": "^2.5.3",
+    "jasmine-core": "^2.5.2",
+    "rimraf": "^2.5.4"
   }
 }
