@@ -15,5 +15,20 @@
 
             return false;
         }
+    };
+    
+    if (!Array.prototype.matrix) {
+        Array.prototype.matrix = function(rows: number, columns: number, initial: number): number[][] {
+            let arr:number[][];
+            arr = [];
+            for (var i = 0; i < rows; ++i) {
+                let col = [];
+                for (var j = 0; j < columns; ++j) {
+                    col[j] = initial;
+                }
+                arr[i] = col;
+            }
+            return arr;
+        }
     }
 })();

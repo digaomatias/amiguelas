@@ -4,7 +4,7 @@ export default class FriendsDraft {
     public runDraft(friendsId: number[]): number[][] {
         this.guard(friendsId);
 
-        let draftedFriends: number[][];
+        let draftedFriends: number[][] = new Array().matrix(friendsId.length, 2, -1);
 
         //Secrets gets friends (position 0 and 1 respectively)
         let secrets: number[] = friendsId.map(v => v);
@@ -12,12 +12,12 @@ export default class FriendsDraft {
         
         for(let i = 0; i < friendsId.length; i++) {
             let secret = this.random(secrets.length);
-            secrets.splice(secrets.indexOf(secret), 1);
+            secret = secrets.splice(secrets.indexOf(secret), 1)[0];
 
             draftedFriends[i][0] = secret;
 
             let friend = this.random(friends.length);
-            friends.splice(friends.indexOf(friend), 1);
+            friend = friends.splice(friends.indexOf(friend), 1)[0];
 
             draftedFriends[i][1] = friend;
         }

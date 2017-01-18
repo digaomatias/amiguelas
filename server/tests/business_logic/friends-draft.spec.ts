@@ -10,7 +10,7 @@ describe('friends draft', () => {
     });
 
     it('should not accept less than three items when run', () => {
-        let ids: number[] = [1, 1];
+        let ids: number[] = [1, 2];
         
         expect(function () { friendsDraft.runDraft(ids); }).toThrow('At least 3 friends are needed for draft');
     });
