@@ -3,6 +3,8 @@ import * as express from 'express';
 import * as logger from 'morgan';
 import * as bodyParser from 'body-parser';
 
+import GroupController from './controllers/group-controller';
+
 // ExpressJS App
 class App {
     public express: express.Application;
@@ -33,6 +35,7 @@ class App {
       });
     });
     this.express.use('/', router);
+    this.express.use('/api/groups', GroupController);
   }
 
 }
