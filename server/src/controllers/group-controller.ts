@@ -1,7 +1,13 @@
 import { Router, Request, Response, NextFunction } from 'express';
+import { Group } from '../models/group.model';
 
 export class GroupController { 
     private router: Router;
+
+    private groups: Array<Group> = [
+        {},
+        {},
+        {}]
 
     public get Router () {
         return this.router;
